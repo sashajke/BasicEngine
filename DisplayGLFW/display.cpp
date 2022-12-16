@@ -47,7 +47,7 @@ Display::Display(int width, int height, const std::string& title)
 void Display::AddKeyCallBack(void(*keyCallback)(GLFWwindow *,int,int,int,int))
 {
 	glfwSetKeyCallback(m_window,(void(*)(GLFWwindow *,int,int,int,int))keyCallback);//{
-
+	
 }
 
 void Display::AddMouseCallBacks(void (* mousebuttonfun)(GLFWwindow*,int,int,int),void (* scrollfun)(GLFWwindow*,double,double),void (* cursorposfun)(GLFWwindow*,double,double))
@@ -66,6 +66,7 @@ void Display::SetScene(void *userPointer)
 {
 	
 	glfwSetWindowUserPointer(m_window,userPointer);
+	//glViewport(0,0*(16.0/9.0),800,800*(16.0/9.0));
 }
 
 void* Display::GetScene()
