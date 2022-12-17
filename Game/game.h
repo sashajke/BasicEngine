@@ -20,6 +20,8 @@ public:
     void Motion();
     //glm::vec3 Game::ray_color(const ray& r);
     glm::vec3 ray_color(const ray& r, const hittable& world, std::vector<shared_ptr<light>> lights, int numOfReflections);
+    ray getSnellsRay(ray original, float n1, float n2, hit_record hit);
+    glm::vec3 getRefractedDirection(glm::vec3 normal, float n1, float n2, glm::vec3 hit);
     //double Game::hit_sphere(const glm::vec3& center, double radius, const ray& r);
 	double dot_product(const glm::vec3 &v, const glm::vec3 &u);
 	~Game(void);

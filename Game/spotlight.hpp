@@ -12,14 +12,14 @@ class spotlight : public light {
         this->cutoffAngle = angle;
         this->position = origin;
     };
-    virtual ray getRayFromPointToLight(glm::vec3 point) override;
+    virtual ray getRayFromPointToLight(glm::vec3 point) const override;
 };
 
-ray spotlight::getRayFromPointToLight(glm::vec3 point) {
+ray spotlight::getRayFromPointToLight(glm::vec3 point) const{
     glm::vec3 directionFromLightToPoint = point - this->position;
     directionFromLightToPoint = glm::normalize(directionFromLightToPoint);
 
-    float angle = acos(glm::dot(directionFromLightToPoint, glm::normalize(this->direction)));
+    float angle = acos(glm::clamp(glm::dot(directionFromLightToPoint, glm::normalize(this->direction)),-0.99f, 0.99f));
     if (angle > this->cutoffAngle) {
         return ray(point, ZERO_VECTOR);
     }

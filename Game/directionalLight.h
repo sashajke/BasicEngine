@@ -8,7 +8,7 @@
 class directionalLight : public light {
 public:
     directionalLight(glm::vec3 direction, glm::vec3 color);
-    virtual ray getRayFromPointToLight(glm::vec3 point) override;
+    virtual ray getRayFromPointToLight(glm::vec3 point)const override;
 };
 
 

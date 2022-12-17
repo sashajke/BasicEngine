@@ -16,9 +16,6 @@ class ray {
         glm::vec3 at(double t) const {
             return orig + t*dir;
         }
-        
-
-    public:
         glm::vec3 orig;
         glm::vec3 dir;
 };
