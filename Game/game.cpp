@@ -10,7 +10,7 @@
 #include <string>
 #include "sstream"
 
-#define MAX_REFLECTIONS_ALLOWED 1
+#define MAX_REFLECTIONS_ALLOWED 5
 
 static void printMat(const glm::mat4 mat)
 {
